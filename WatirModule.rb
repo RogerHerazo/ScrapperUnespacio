@@ -14,7 +14,7 @@ module WatirModule
 		@browser.div(:id => "portalMenuBar").li(:text => /Log in/).click
 	end
 
-	def self.fillFields (user)
+	def self.fillFields user
 	@browser.input(:name => 'txtUserName').select
 	@browser.send_keys user.id
 	@browser.input(:name => 'txtPassword').click
@@ -22,7 +22,7 @@ module WatirModule
 	@browser.input(:id => 'btnLogin').click
 	end
 
-	def self.exists (id)
+	def self.exists id
 		return @browser.span(:id => "#{id}").exists?
 	end
 

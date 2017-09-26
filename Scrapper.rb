@@ -7,17 +7,17 @@ require_relative 'WatirModule'
 
 module Scrapper
 
-def self.loginUser(user)
+def self.loginUser user
 	puts 'Llego aca'
 	WatirModule.clickLoginUser
-	Watirmodule.fillFields(user)
+	WatirModule.fillFields user
 	we_are_in = areWeIn
 	return we_are_in
 end
 
 def self.areWeIn
 
-	if WatirModule.exist("spanUsername")
+	if WatirModule.exists "spanUsername"
 		return true
 	else
 		return false

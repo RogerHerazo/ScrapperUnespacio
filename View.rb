@@ -15,20 +15,20 @@ module View
 		puts 'Fill your credentials'
 		puts 'Username: '
 		id = gets.chomp
-		pass = passwordCred('Password')
-		user = User.new(id,pass)	
-		cred = Scrapper.loginUser(user)
+		pass = passwordCred 'Password'
+		user = User.new id,pass
+		cred = Scrapper.loginUser user
 
 		if 	!cred
 			puts 'Wrong password or user'
 			sleep(2)
-			credentials()
+			credentials
 		else
 				puts 'Your credentials are good'
 		end
 	end
 
-def self.passwordCred(message, mask="*")
+def self.passwordCred message, mask="*"
 	ask(message) {
 			|o| o.echo = mask
 	}
